@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 5000;
+// const port = 5000;
 
 app.use(express.json());
 
@@ -8,6 +8,6 @@ app.get('/api/hello', (req, res) => {
   res.json({ message: 'Hello from the backend!' });
 });
 
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+app.listen(process.env.PORT || 5000, () => {
+  console.log('Servidor escuchando en el puerto 3000');
 });
