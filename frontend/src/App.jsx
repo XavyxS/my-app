@@ -7,7 +7,7 @@ function App() {
   useEffect(() => {
     const backendUrl = import.meta.env.VITE_API_URL;
 
-    fetch(backendUrl)
+    fetch(`${backendUrl}/hello`)
       .then(response => response.json())
       .then(data => setMessage(data.message));
   }, []);
