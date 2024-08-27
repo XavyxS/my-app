@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
-import './App.css'
+import './App.css';
 
 function App() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    fetch('/api/hello')
+    const backendUrl = import.meta.env.VITE_API_URL;
+
+    fetch(backendUrl)
       .then(response => response.json())
       .then(data => setMessage(data.message));
   }, []);
